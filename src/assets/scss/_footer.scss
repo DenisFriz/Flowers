@@ -1,0 +1,118 @@
+@use "./mixins/mixins" as mix;
+
+.footer {
+  margin-top: 120px;
+  border-top: 1px solid var(--btn-and-text-color);
+  padding: 32px 16px 40px;
+  &__container {
+    @include mix.media-min(640px) {
+      --container-width: 500px;
+    }
+    @include mix.media-min(840px) {
+      --container-width: 700px;
+    }
+
+    @include mix.media-min(1000px) {
+      --container-width: 900px;
+    }
+    @include mix.media-min(1040px) {
+      --container-width: 1146px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    justify-content: space-between;
+    @include mix.media-min(920px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__links {
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+    @include mix.media-min(920px) {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__link {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 12px;
+    @include mix.media-min(920px) {
+      font-size: 20px;
+    }
+  }
+
+  &__center {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 100%;
+    order: 3;
+    @include mix.media-min(920px) {
+      order: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      .logo-icon {
+        width: 264px;
+        height: 137px;
+      }
+    }
+  }
+
+  &__contacts {
+    text-align: center;
+  }
+
+  &__contact {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    span {
+      display: block;
+    }
+    @include mix.media-min(920px) {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    column-gap: clamp(1rem, 0.3036rem + 2.8571vw, 2.875rem);
+    @include mix.media-min(920px) {
+      margin-top: 32px;
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--btn-and-text-color);
+    @include mix.media-min(920px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+.phone {
+}
+.mail {
+}
+.city {
+}

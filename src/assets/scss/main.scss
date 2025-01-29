@@ -1,0 +1,67 @@
+@use "./mixins/mixins";
+@use "./header";
+@use "./flower";
+@use "./features";
+
+@use "./details";
+@use "./feedback";
+@use "./clients";
+@use "./footer";
+@use "./catalog";
+
+:root {
+  --primary: #000;
+  --btn-and-text-color: #a83959;
+  --white-color: #f5ebec;
+  --landing-color: #b8697f;
+  --fourthy-color: #c9a1ac;
+  --fifty-color: #5db9ff;
+  --sixty-color: #6f6567;
+
+  --container-width: 360px;
+  --container-x: 18px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro Regular", sans-serif;
+  font-size: 16px;
+  background-color: var(--primary);
+  color: var(--white-color);
+}
+
+.container {
+  max-width: calc(var(--container-width) - var(--container-x));
+  margin: 0 auto;
+}
+
+.text--burgundy {
+  color: var(--btn-and-text-color);
+}
+.button {
+  color: var(--white-color);
+  text-align: center;
+  background-color: var(--btn-and-text-color);
+}
+
+button {
+  cursor: pointer;
+}

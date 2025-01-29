@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers - квіти Київ</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <link rel="preload" href="css/fonts/SourceSansPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+    @@include("./html/header.html")
+
+    <main>
+        @@include("./html/flower.html")
+
+        @@include("./html/features.html")
+
+        @@include("./html/catalog.html")
+
+        @@include("./html/details.html")
+
+        @@include("./html/feedback.html")
+
+        @@include("./html/clients.html")
+    </main>
+
+    @@include("./html/footer.html")
+    <script src="./js/bundle.js"></script>
+</body>
+
+</html>

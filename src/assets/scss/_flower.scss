@@ -1,0 +1,137 @@
+@use "./mixins/mixins" as mix;
+
+.flower {
+  padding-top: 380px;
+  overflow-x: clip;
+  @include mix.media-min(920px) {
+    margin-top: 109px;
+    padding-top: 0;
+    padding-bottom: 380px;
+  }
+  &__container {
+    position: relative;
+    --container-width: 100%;
+    --container-x: 0;
+    background-color: rgba($color: #fff, $alpha: 0.6);
+    &::before {
+      content: "";
+      position: absolute;
+      top: -160%;
+      right: -50%;
+      background: url("../img/big-flower.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 490px;
+      height: 424px;
+      z-index: -1;
+      @include mix.media-min(390px) {
+        right: -28%;
+      }
+      @include mix.media-min(520px) {
+        right: -20%;
+      }
+      @include mix.media-min(670px) {
+        right: -6%;
+        width: 530px;
+        height: 530px;
+      }
+      @include mix.media-min(920px) {
+        top: 24%;
+        right: -5%;
+      }
+      @include mix.media-min(1022px) {
+        top: 20%;
+        right: -4%;
+        width: 600px;
+        height: 600px;
+      }
+      @include mix.media-min(1200px) {
+        top: 27%;
+        right: -4%;
+        width: 768px;
+        height: 640px;
+      }
+    }
+    @include mix.media-min(920px) {
+      background-color: transparent;
+      --container-width: 1312px;
+      --container-x: 18px;
+    }
+    @include mix.media-min(1050px) {
+      --container-width: 1312px;
+      --container-x: 18px;
+    }
+  }
+
+  &__block {
+    font-size: 24px;
+    padding: 40px 15px;
+    width: max-content;
+    @include mix.media-min(920px) {
+      font-size: 48px;
+    }
+
+    @include mix.media-max(370px) {
+      width: auto;
+    }
+
+    .text--burgundy {
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 500;
+      font-style: italic;
+    }
+  }
+
+  &__footer {
+    margin-top: 16px;
+    text-transform: uppercase;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    @include mix.media-min(920px) {
+      margin-top: 12px;
+      margin-left: 110px;
+    }
+    @include mix.media-min(920px) {
+      font-size: 80px;
+    }
+    > .text--burgundy {
+      text-transform: none;
+      font-size: 24px;
+      @include mix.media-min(920px) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--btn-and-text-color);
+    font-family: "Source Sans Pro Regular", sans-serif;
+    transition: box-shadow 0.3s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+      }
+    }
+    @media (hover: none) {
+      &:active {
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+      }
+    }
+    @include mix.media-min(540px) {
+      width: 400px;
+    }
+    @include mix.media-min(920px) {
+      margin-left: 110px;
+    }
+  }
+}

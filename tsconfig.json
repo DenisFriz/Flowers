@@ -1,0 +1,13 @@
+{
+  "exclude": ["node_modules"],
+  "files": ["src/js/main.ts"],
+  "compilerOptions": {
+    "target": "ES6", // Целевая версия JavaScript
+    "module": "ESNext", // Использование ES Modules
+    "strict": true, // Включение всех строгих проверок
+    "esModuleInterop": true, // Совместимость с CommonJS
+    "allowSyntheticDefaultImports": true, // Разрешение синтетических импортов
+    "skipLibCheck": true, // Пропуск проверки типов в библиотеках
+    "forceConsistentCasingInFileNames": true
+  }
+}

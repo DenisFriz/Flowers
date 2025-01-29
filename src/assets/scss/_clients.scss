@@ -1,0 +1,113 @@
+@use "./mixins/mixins" as mix;
+
+.clients {
+  margin-top: clamp(5rem, 4.0714rem + 3.8095vw, 7.5rem);
+  &__title {
+    margin-bottom: clamp(1.5rem, -1.1929rem + 11.0476vw, 8.75rem);
+    display: block;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    width: min(89.74%, 488px);
+    text-align: left;
+    border-bottom: 1px solid var(--btn-and-text-color);
+    margin-bottom: 24px;
+    margin-left: auto;
+  }
+
+  &__container {
+    --container-x: 0;
+    @include mix.media-min(920px) {
+      --container-width: 1312px;
+      --container-x: 18px;
+      position: relative;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &__item {
+    position: relative;
+    width: clamp(11.25rem, 8.1625rem + 12.6667vw, 19.5625rem);
+    height: clamp(15rem, 12.2607rem + 11.2381vw, 22.375rem);
+    @include mix.media-min(920px) {
+      &:not(:last-child) {
+        margin-right: 18px;
+      }
+    }
+    img {
+      pointer-events: none;
+      user-select: none;
+      height: 100%;
+      object-fit: cover;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #b96a7f, $alpha: 0.4);
+
+      @include mix.media-min(920px) {
+        display: none;
+      }
+    }
+  }
+
+  &__active {
+    order: 0;
+    z-index: 5;
+
+    width: clamp(13.75rem, 11.5911rem + 8.8571vw, 19.5625rem);
+    height: clamp(16.5rem, 14.3179rem + 8.9524vw, 22.375rem);
+
+    @include mix.media-min(920px) {
+      width: clamp(11.25rem, 8.1625rem + 12.6667vw, 19.5625rem);
+      height: clamp(15rem, 12.2607rem + 11.2381vw, 22.375rem);
+    }
+
+    &::before {
+      content: "";
+      display: none;
+    }
+  }
+}
+
+.slider {
+  &__prev,
+  &__next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 8;
+    transform: translateY(-50%);
+    > .user-icon {
+      width: 16px;
+      height: 34px;
+    }
+  }
+
+  @include mix.media-max(920px) {
+    &__prev,
+    &__next {
+      display: none;
+    }
+  }
+
+  &__prev {
+    left: 10px;
+  }
+
+  &__next {
+    right: 10px;
+    transform: rotate(-180deg);
+  }
+}
